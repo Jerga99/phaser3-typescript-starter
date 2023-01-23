@@ -147,8 +147,8 @@ export default class PlayScene extends BaseScene {
   createScore() {
     this.score = 0;
     const bestScore = localStorage.getItem('bestScore');
-    this.scoreText = this.add.text(16, 16, `Score: ${0}`, { fontSize: '32px', fill: '#000'});
-    this.add.text(16, 52, `Best score: ${bestScore || 0}`, { fontSize: '18px', fill: '#000'});
+    this.scoreText = this.add.text(16, 16, `Score: ${0}`, { fontSize: '32px', color: '#000'});
+    this.add.text(16, 52, `Best score: ${bestScore || 0}`, { fontSize: '18px', color: '#000'});
   }
 
   createPause() {

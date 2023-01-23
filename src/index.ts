@@ -18,8 +18,12 @@ const SHARED_CONFIG = {
   startPosition: BIRD_POSITION
 }
 
-const Scenes = [PreloadScene, MenuScene, ScoreScene, PlayScene, PauseScene];
-const createScene = (Scene: any) => new Scene(SHARED_CONFIG)
+interface AppScene extends Phaser.Scene {
+  new (c: typeof SHARED_CONFIG);
+}
+
+const Scenes: Phaser.Scene[] = [PreloadScene, MenuScene, ScoreScene, PlayScene, PauseScene];
+const createScene = (Scene: AppScene) => new Scene(SHARED_CONFIG)
 const initScenes = () => Scenes.map(createScene)
 
 const config: Phaser.Types.Core.GameConfig = {
